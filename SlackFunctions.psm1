@@ -8,13 +8,13 @@ Function Get-SlackMentions {
     Get slack mentions for me.
   #>
   Param (
-    [Parameter(Mandatory)][String]$Workspace,
+    [Parameter(Mandatory)][String]$WorkSpace,
     [Parameter(Mandatory)][String]$Token,
     [Parameter(Mandatory)][String]$AuthToken,
     [ValidateRange(1,1000)][Int]$Count = 100
   )
 
-  $mentionsUri = 'https://' + $Workspace + '.slack.com/api/activity.mentions'
+  $mentionsUri = 'https://' + $WorkSpace + '.slack.com/api/activity.mentions'
   $mentionsParameters = @{
     token = $Token
     count = $Count
@@ -37,13 +37,13 @@ Function Get-SlackStarredMessages {
     Get slack mentions for me.
   #>
   Param (
-    [Parameter(Mandatory)][String]$Workspace,
+    [Parameter(Mandatory)][String]$WorkSpace,
     [Parameter(Mandatory)][String]$Token,
     [Parameter(Mandatory)][String]$AuthToken,
     [ValidateRange(1,1000)][Int]$Count = 100
   )
 
-  $starsUri = 'https://' + $Workspace + '.slack.com/api/stars.list'
+  $starsUri = 'https://' + $WorkSpace + '.slack.com/api/stars.list'
   $starsParameters = @{
     token = $Token
     count = $Count
@@ -67,12 +67,12 @@ Function Get-SlackUsers {
     Get slack users.
   #>
   Param (
-    [Parameter(Mandatory)][String]$Workspace,
+    [Parameter(Mandatory)][String]$WorkSpace,
     [Parameter(Mandatory)][String]$Token,
     [Parameter(Mandatory)][String]$AuthToken
   )
 
-  $usersUri = 'https://' + $Workspace + '.slack.com/api/users.list'
+  $usersUri = 'https://' + $WorkSpace + '.slack.com/api/users.list'
   $usersParameters = @{
     token = $Token
   }
